@@ -10,25 +10,56 @@ import XCTest
 @testable import FizzBuzz
 
 class FizzBuzzTests: XCTestCase {
+let num = FizzBuzz()
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testIsDivisibleByThree() {
+        let result = num.isDivisibleByThree(number: 3)
+        XCTAssertEqual(result, true)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testIsNotDivisibleByThree() {
+        let result = num.isDivisibleByThree(number: 1)
+        XCTAssertEqual(result, false)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testIsDivisibleByFive() {
+        let result = num.isDivisibleByFive(number: 5)
+        XCTAssertEqual(result, true)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testIsNotDivisibleByFive() {
+        let result = num.isDivisibleByFive(number: 2)
+        XCTAssertEqual(result, false)
+    }
+    
+    func testIsDivisibleByFifteen() {
+        let result = num.isDivisibleByFifteen(number: 15)
+        XCTAssertEqual(result, true)
+    }
+    
+    func testIsNotDivisibleByFifteen() {
+        let result = num.isDivisibleByFifteen(number: 10)
+        XCTAssertEqual(result, false)
+    }
+    
+    func testIsSayFizz() {
+        let result = num.check(num: 3)
+        XCTAssertEqual(result, "Fizz")
+    }
+    
+    func testIsSayBuzz() {
+        let result = num.check(num: 5)
+        XCTAssertEqual(result, "Buzz")
+    }
+    
+    func testIsSayFizzbuzz() {
+    let result = num.check(num: 15)
+    XCTAssertEqual(result, "Fizzbuzz")
+    }
+    
+    func testIsReturnTheNumber() {
+        let result = num.check(num: 4)
+        XCTAssertEqual(result, "4")
     }
 
 }
